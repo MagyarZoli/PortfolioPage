@@ -1,0 +1,8 @@
+@import url('style.css');
+:root{
+    --bg-color: #dde0ec;
+    --text-color: #000;
+    --main-color: #6352D3;
+    --second-color: gray;
+    --other-color: #c7ccd8;
+}

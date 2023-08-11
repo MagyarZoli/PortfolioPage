@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title th:text="${author.name}">title</title>
+    <link th:href="@{/css/dark.css}"
+          rel="stylesheet"
+          id="theme-style"
+          type="text/css"
+          href="css/dark.css">
+    <link th:href="@{/css/style.css}"
+          rel="stylesheet"
+          type="text/css"
+          href="css/style.css">
+    <link rel="stylesheet"
+          href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+<header>
+    <br>
+    <div class="bx bx-menu"
+         id="menu-icon"></div>
+    <ul class="navbar">
+        <li><a th:text="${navbar.home}"
+               href="/">home</a></li>
+        <li><a th:text="${navbar.about}"
+
+               href="/about#about">about</a></li>
+        <li><a th:text="${navbar.services}"
+
+               href="/about#services">services</a></li>
+        <li><a th:text="${navbar.portfolio}"
+
+               href="/portfolio">portfolio</a></li>
+        <li><a th:text="${navbar.contact}"
+
+               href="/contact">contact</a></li>
+        <li><a onclick="themeChange()">
+            <i class='bx bxs-adjust-alt'></i></a></li>
+    </ul>
+</header>
+
+<section class="portfolio"
+         id="portfolio">
+    <div class="main-text">
+        <h2 th:text="${navbar.portfolio}">portfolio</h2>
+        <h4>Lorem ipsum dolor sit</h4>
+    </div>
+    <div class="portfolio-content">
+        <div th:each="portfolio : ${row}"
+             class="row">
+            <a th:href="@{/portfolio/__${portfolio.name}__}"
+               href="#">
+                <img th:src="@{${portfolio.shortImageFolder} + ${portfolio.repositoryImage}}"
+                     src="image/1.jpg"
+                     alt="">
+                <div class="main-row">
+                    <div class="row-text">
+                        <h6 th:text="${portfolio.name}">Lorem ipsum dolor</h6>
+                    </div>
+                </div>
+                <h3 th:text="${portfolio.description}"
+                    id="portfolio-description">Lorem ipsum dolor, sit amet consectetur</h3>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="last-text">
+    <p>[[${developed}]] [[${author.name}]] @ [[${#dates.format(date, 'yyyy')}]]</p>
+</div>
+
+<a id="top"
+   href="#"><i class='bx bxs-chevrons-up'></i></a>
+
+<script src="http://unpkg.com/scrollreveal"></script>
+<script th:src="@{/js/script.js}"
+        type="text/javascript"
+        src="js/script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const storedTheme = localStorage.getItem("theme");
+        if (storedTheme === "dark") {
+            themeStyle.setAttribute("href", "css/dark.css");
+        } else {
+            themeStyle.setAttribute("href", "css/light.css");
+        }
+    });
+</script>
+</body>
+</html>

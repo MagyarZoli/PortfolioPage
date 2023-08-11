@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title th:text="${author.name}">title</title>
+  <link th:href="@{/css/dark.css}"
+        rel="stylesheet"
+        id="theme-style"
+        type="text/css"
+        href="css/dark.css">
+  <link th:href="@{/css/style.css}"
+        rel="stylesheet"
+        type="text/css"
+        href="css/style.css">
+  <link rel="stylesheet"
+        href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+<header>
+  <br>
+  <div class="bx bx-menu"
+       id="menu-icon"></div>
+  <ul class="navbar">
+    <li><a th:text="${navbar.home}"
+           href="/">home</a></li>
+    <li><a th:text="${navbar.about}"
+
+           href="/about#about">about</a></li>
+    <li><a th:text="${navbar.services}"
+
+           href="/about#services">services</a></li>
+    <li><a th:text="${navbar.portfolio}"
+
+           href="/portfolio">portfolio</a></li>
+    <li><a th:text="${navbar.contact}"
+
+           href="/contact">contact</a></li>
+    <li><a onclick="themeChange()">
+      <i class='bx bxs-adjust-alt'></i></a></li>
+  </ul>
+</header>
+
+<section class="about"
+         id="about">
+  <div class="about-img">
+    <img src="image/about.png"
+         alt="about.png">
+  </div>
+  <div class="about-text">
+    <h2 th:text="${navbar.about}">about</h2>
+    <h4>Lorem ipsum dolor, sit amet</h4>
+    <p th:utext="${author.about}">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum iusto quis iste odit accusamus quos, iure libero quam facere numquam necessitatibus unde nostrum sit enim a explicabo, ex saepe suscipit?</p>
+    <div class="about-gri">
+      <div th:each="about : ${aboutIn}"
+           class="about-in">
+        <h5 th:text="${about.description}">0. Lorem ipsum dolor</h5>
+      </div>
+      <a th:text="${button.contactMe}"
+         class="btn"
+         href="/contact">contact</a>
+    </div>
+  </div>
+</section>
+
+<section class="services"
+         id="services">
+  <div class="main-text">
+    <h2 th:text="${navbar.services}">services</h2>
+    <h4>Lorem ipsum dolor</h4>
+    <div class="services-content">
+      <div th:each="services : ${devServices}"
+           class="box">
+        <div class="services-icon">
+          <i th:class="'bx bxl-' + ${services.icon}"
+             class='bx bxs-code-alt'></i>
+        </div>
+        <h3 th:text="${services.title}">Lorem ipsum</h3>
+        <p th:text="${services.text}">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum commodi similique voluptas, corporis quidem iste! Magni praesentium sequi quis ipsum rerum, ad deserunt excepturi accusamus maiores quas vel, earum consequuntur.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="last-text">
+  <p>[[${developed}]] [[${author.name}]] @ [[${#dates.format(date, 'yyyy')}]]</p>
+</div>
+
+<a id="top"
+   href="#"><i class='bx bxs-chevrons-up'></i></a>
+
+<script src="http://unpkg.com/scrollreveal"></script>
+<script th:src="@{/js/script.js}"
+        type="text/javascript"
+        src="js/script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const storedTheme = localStorage.getItem("theme");
+        if (storedTheme === "dark") {
+            themeStyle.setAttribute("href", "css/dark.css");
+        } else {
+            themeStyle.setAttribute("href", "css/light.css");
+        }
+    });
+</script>
+</body>
+</html>
