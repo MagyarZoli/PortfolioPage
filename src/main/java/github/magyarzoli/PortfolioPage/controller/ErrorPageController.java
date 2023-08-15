@@ -28,6 +28,10 @@ implements ErrorController {
         this.errorAttributes = errorAttributes;
     }
 
+    public String getErrorPath() {
+        return ERROR_PATH;
+    }
+
     @Autowired
     public void setService(HomeService service) {
         this.service = service;
@@ -47,9 +51,5 @@ implements ErrorController {
         model.addAttribute("developed", service.getPropertiesValues().getDeveloped());
         model.addAttribute("date", new Date());
         return "error";
-    }
-
-    public String getErrorPath() {
-        return ERROR_PATH;
     }
 }
