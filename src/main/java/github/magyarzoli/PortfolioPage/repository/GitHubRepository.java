@@ -33,7 +33,7 @@ extends CrudRepository<GitHubRepo, Long> {
      * This is a custom query method with dynamic sorting. It fetches the top N GitHubRepo entities based on the
      * specified {@link org.springframework.data.domain.Pageable Pageable} object, ordered by name in descending order.
      * @param       pageable Limit setting based on the specified Pageable object.
-     * @return
+     * @return      All GitHubRepo entities and orders them by their name property in descending order.
      */
     @Query("SELECT g FROM GitHubRepo g ORDER BY g.name DESC")
     List<GitHubRepo> findTopNByOrderByNameDesc(Pageable pageable);

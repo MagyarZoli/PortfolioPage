@@ -36,9 +36,9 @@ public class Greet {
         int currentHour = LocalTime.now().getHour();
         if (currentHour >= 6 && currentHour < 12) {
             return getMorning();
-        } else if (currentHour >=12 && currentHour < 18) {
+        } else if (currentHour >= 12 && currentHour < 18) {
             return getDay();
-        } else if (currentHour >=18 && currentHour < 22) {
+        } else if (currentHour >= 18 && currentHour < 22) {
             return getEvening();
         } else {
             return getNight();
