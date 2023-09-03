@@ -5,7 +5,7 @@ target/
 !**/src/test/**/target/
 application.properties
 data.sql
-image/
+**/src/main/resources/static/**/image/
 
 ### STS ###
 .apt_generated

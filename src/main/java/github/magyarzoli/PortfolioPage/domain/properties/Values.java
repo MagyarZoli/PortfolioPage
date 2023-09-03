@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 public class Values {
 
     /**
-     * his annotation is used to inject the value associated with the property key "developed" from the Spring
+     * This annotation is used to inject the value associated with the property key "developed" from the Spring
      * configuration. The property value will be assigned to the {@code developed} field.
      */
     @Value("${developed}")
@@ -29,4 +29,25 @@ public class Values {
      */
     @Value("${exception.portfolio}")
     private String exceptionRepo;
+
+    /**
+     * This annotation is used to inject the value associated with the property key "picture-this" from the Spring
+     * configuration. The property value will be assigned to the {@code pictureThis} field.
+     */
+    @Value("${picture-this}")
+    private String pictureThis;
+
+    /**
+     * This annotation is used to inject the value associated with the property key "contact-head" from the Spring
+     * configuration. The property value will be assigned to the {@code contactHead} field.
+     */
+    @Value("${contact-head}")
+    private String contactHead;
+
+    /**
+     * This annotation is used to inject the value associated with the property key "contact-body" from the Spring
+     * configuration. The property value will be assigned to the {@code contactBody} field.
+     */
+    @Value("${contact-body}")
+    private String contactBody;
 }

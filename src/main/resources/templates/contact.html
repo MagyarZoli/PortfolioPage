@@ -55,8 +55,8 @@
          id="contact">
   <div class="contact-text">
     <h2 th:text="${button.contactMe}">contact</h2>
-    <h4>Lorem ipsum dolor laboriosam.</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero accusamus ullam neque optio, suscipit nesciunt pariatur culpa, consequatur atque expedita nam ab iusto doloremque voluptatum aut impedit soluta sed dolorum</p>
+    <h4 th:text="${contactHead}">Lorem ipsum dolor laboriosam.</h4>
+    <p th:text="${contactBody}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero accusamus ullam neque optio, suscipit nesciunt pariatur culpa, consequatur atque expedita nam ab iusto doloremque voluptatum aut impedit soluta sed dolorum</p>
     <div class="contact-list">
       <li><a href="#a"><i class='bx bxs-home'></i> [[${author.address}]]</a></li>
       <li><a href="#e"><i class='bx bxs-envelope'></i> [[${author.email}]]</a></li>

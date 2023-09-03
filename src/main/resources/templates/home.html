@@ -60,7 +60,7 @@
         <h3 th:text="${home.about}">Lorem Developer</h3>
         <a th:text="${button.hireMe}"
            class="btn"
-           href="#">hire</a>
+           href="#about">hire</a>
     </div>
 </section>
 
@@ -72,7 +72,7 @@
     </div>
     <div class="about-text">
         <h2 th:text="${navbar.about}">about</h2>
-        <h4>Lorem ipsum dolor, sit amet</h4>
+        <h4 th:text="${pictureThis}">Lorem ipsum dolor, sit amet</h4>
         <p th:utext="${author.about}">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum iusto quis iste odit accusamus quos, iure libero quam facere numquam necessitatibus unde nostrum sit enim a explicabo, ex saepe suscipit?</p>
         <div class="about-gri">
             <div th:each="about : ${aboutIn}"
@@ -90,7 +90,6 @@
          id="services">
     <div class="main-text">
         <h2 th:text="${navbar.services}">services</h2>
-        <h4>Lorem ipsum dolor</h4>
         <div class="services-content">
             <div th:each="services : ${devServices}"
                  class="box">
@@ -109,7 +108,7 @@
          id="portfolio">
     <div class="main-text">
         <h2 th:text="${navbar.portfolio}">portfolio</h2>
-        <h4>Lorem ipsum dolor sit</h4>
+        <h4 th:text="${developed}">Lorem ipsum dolor sit</h4>
     </div>
     <div class="portfolio-content">
         <div th:each="portfolio : ${row}"
@@ -135,8 +134,8 @@
          id="contact">
     <div class="contact-text">
         <h2 th:text="${button.contactMe}">contact</h2>
-        <h4>Lorem ipsum dolor laboriosam.</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero accusamus ullam neque optio, suscipit nesciunt pariatur culpa, consequatur atque expedita nam ab iusto doloremque voluptatum aut impedit soluta sed dolorum</p>
+        <h4 th:text="${contactHead}">Lorem ipsum dolor laboriosam.</h4>
+        <p th:text="${contactBody}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero accusamus ullam neque optio, suscipit nesciunt pariatur culpa, consequatur atque expedita nam ab iusto doloremque voluptatum aut impedit soluta sed dolorum</p>
         <div class="contact-list">
             <li><a href="#a"><i class='bx bxs-home'></i> [[${author.address}]]</a></li>
             <li><a href="#e"><i class='bx bxs-envelope'></i> [[${author.email}]]</a></li>

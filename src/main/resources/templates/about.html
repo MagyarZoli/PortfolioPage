@@ -59,7 +59,7 @@
   </div>
   <div class="about-text">
     <h2 th:text="${navbar.about}">about</h2>
-    <h4>Lorem ipsum dolor, sit amet</h4>
+    <h4 th:text="${pictureThis}">Lorem ipsum dolor, sit amet</h4>
     <p th:utext="${author.about}">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum iusto quis iste odit accusamus quos, iure libero quam facere numquam necessitatibus unde nostrum sit enim a explicabo, ex saepe suscipit?</p>
     <div class="about-gri">
       <div th:each="about : ${aboutIn}"
@@ -77,7 +77,6 @@
          id="services">
   <div class="main-text">
     <h2 th:text="${navbar.services}">services</h2>
-    <h4>Lorem ipsum dolor</h4>
     <div class="services-content">
       <div th:each="services : ${devServices}"
            class="box">

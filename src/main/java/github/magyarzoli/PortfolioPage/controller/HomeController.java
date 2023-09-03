@@ -84,6 +84,10 @@ public class HomeController {
      * @see         github.magyarzoli.PortfolioPage.service.HomeService#getContact() getContact()
      * @see         github.magyarzoli.PortfolioPage.service.HomeService#getIconLinks() getIconLinks()
      * @see         github.magyarzoli.PortfolioPage.service.HomeService#getGreet() getGreet()
+     * @see         github.magyarzoli.PortfolioPage.service.HomeService#getPropertiesValues() getPropertiesValues()
+     * @see         github.magyarzoli.PortfolioPage.domain.properties.Values#getPictureThis() getPictureThis()
+     * @see         github.magyarzoli.PortfolioPage.domain.properties.Values#getContactHead() getContactHead()
+     * @see         github.magyarzoli.PortfolioPage.domain.properties.Values#getContactBody() getContactBody()
      */
     @RequestMapping("/")
     public String home(Model model) {
@@ -95,6 +99,9 @@ public class HomeController {
         model.addAttribute("contact", service.getContact());
         model.addAttribute("iconLink", service.getIconLinks());
         model.addAttribute("currentGreet", service.getGreet());
+        model.addAttribute("pictureThis", service.getPropertiesValues().getPictureThis());
+        model.addAttribute("contactHead", service.getPropertiesValues().getContactHead());
+        model.addAttribute("contactBody", service.getPropertiesValues().getContactBody());
         return "home";
     }
 
@@ -123,12 +130,15 @@ public class HomeController {
      *              commonController(Model)
      * @see         github.magyarzoli.PortfolioPage.service.HomeService#getSkills() getSkills()
      * @see         github.magyarzoli.PortfolioPage.service.HomeService#getDevServices() getDevServices()
+     * @see         github.magyarzoli.PortfolioPage.service.HomeService#getPropertiesValues() getPropertiesValues()
+     * @see         github.magyarzoli.PortfolioPage.domain.properties.Values#getPictureThis() getPictureThis()
      */
     @RequestMapping("/about")
     public String about(Model model) {
         commonController(model);
         model.addAttribute("aboutIn", service.getSkills());
         model.addAttribute("devServices", service.getDevServices());
+        model.addAttribute("pictureThis", service.getPropertiesValues().getPictureThis());
         return "about";
     }
 
@@ -153,7 +163,7 @@ public class HomeController {
      * @return      The name of the view template.
      * @see         github.magyarzoli.PortfolioPage.controller.HomeController#commonController(Model)
      *              commonController(Model)
-     * @see          github.magyarzoli.PortfolioPage.service.HomeService#getRepos() getRepos()
+     * @see         github.magyarzoli.PortfolioPage.service.HomeService#getRepos() getRepos()
      */
     @RequestMapping("/portfolio")
     public String repos(Model model) {
@@ -247,12 +257,17 @@ public class HomeController {
      *              commonController(Model)
      * @see         github.magyarzoli.PortfolioPage.service.HomeService#getContact() getContact()
      * @see         github.magyarzoli.PortfolioPage.service.HomeService#getIconLinks() getIconLinks()
+     * @see         github.magyarzoli.PortfolioPage.service.HomeService#getPropertiesValues() getPropertiesValues()
+     * @see         github.magyarzoli.PortfolioPage.domain.properties.Values#getContactHead() getContactHead()
+     * @see         github.magyarzoli.PortfolioPage.domain.properties.Values#getContactBody() getContactBody()
      */
     @RequestMapping("/contact")
     public String contact(Model model) {
         commonController(model);
         model.addAttribute("contact", service.getContact());
         model.addAttribute("iconLink", service.getIconLinks());
+        model.addAttribute("contactHead", service.getPropertiesValues().getContactHead());
+        model.addAttribute("contactBody", service.getPropertiesValues().getContactBody());
         return "contact";
     }
 
